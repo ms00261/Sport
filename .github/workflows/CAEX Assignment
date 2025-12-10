@@ -1,0 +1,17 @@
+# CAEX Assignment — QR Code + Image-to-GCode (static webpages)
+
+This repository contains two static, client-side web applications:
+
+- QR Code generator — generate and download a QR code PNG from text or a URL.
+- Image → G-code generator — upload an image, convert to grayscale + threshold, produce simple raster-style G-code and a preview image.
+
+How to run
+1. Serve this folder from any static host (GitHub Pages, Netlify, or a local `http-server`).
+2. Open `index.html` and click the app you want.
+
+Notes
+- Both apps run entirely in the browser (no server component).
+- The G-code generator produces simple raster line segments (good for pen plotters or low-fidelity laser engraving). For vector G-code, use a contourization step (Potrace) to get vector paths.
+- Adjust mm-per-pixel, feed rates, and pen/laser Z values for your machine before running the generated G-code.
+
+License: MIT
