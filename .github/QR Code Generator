@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>QR Code Generator</h1>
+    <p>Enter text or a URL, generate a QR code, and download it as a PNG.</p>
+
+    <div class="controls">
+      <label>Text / URL
+        <input id="text" type="text" placeholder="https://example.com" value="https://example.com" />
+      </label>
+      <label>Size (px)
+        <input id="size" type="number" min="64" max="2048" value="512" />
+      </label>
+      <label>Error correction
+        <select id="ec">
+          <option value="L">L (7%)</option>
+          <option value="M" selected>M (15%)</option>
+          <option value="Q">Q (25%)</option>
+          <option value="H">H (30%)</option>
+        </select>
+      </label>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <button id="generate">Generate</button>
+        <button id="download" disabled>Download PNG</button>
+      </div>
+    </div>
+
+    <div id="qwrap">
+      <canvas id="qcanvas" width="512" height="512" style="background:white;border:1px solid #eee;"></canvas>
+    </div>
+  </main>
+
+  <!-- qrcode library (toCanvas) -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
